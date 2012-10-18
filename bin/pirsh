@@ -1,4 +1,14 @@
 #!/usr/bin/env ruby
 
+require 'fog'
+require 'rubygems'
 
-puts "RUBBBYYYYYYYYYYYYYYYYYYYYYYYYYy"
+Fog.mock!
+
+Fog::Storage.new({
+    :aws_access_key_id => 'testkeytmp',
+    :aws_secret_access_key => 'fake_secret_access_key',
+    :provider => 'AWS'
+})
+
+
