@@ -30,7 +30,7 @@ module Pollution
         end
 
         def list_servers()
-             puts s.table([:id, :flavor_id, :public_ip_address, :private_ip_address, :image_id ])
+             puts @pconnector.servers.table([:id, :flavor_id, :public_ip_address, :private_ip_address, :image_id ])
         end
     end        # end class Provider
 

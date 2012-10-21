@@ -8,6 +8,9 @@ module Pollution
              when "AWS"
                  require File.join(File.dirname(__FILE__), 'ec2')
                  Pollution::Provider::EC2.new(config)
+             when "LIBVIRT"
+                 require File.join(File.dirname(__FILE__), 'libvirt')
+                 Pollution::Provider::Libvirt.new(config)
              else
                  puts "error: no provider type defined"
              end
