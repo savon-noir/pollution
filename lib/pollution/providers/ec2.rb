@@ -28,7 +28,14 @@ module Pollution
         def get_vpcs()
              return @pconnector.vpcs
         end
+
+        def list_servers()
+             puts s.table([:id, :flavor_id, :public_ip_address, :private_ip_address, :image_id ])
+        end
     end        # end class Provider
 
     end    # module EC2
 end            # module Pollution
+
+
+

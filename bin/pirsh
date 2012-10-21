@@ -8,7 +8,7 @@ require '../lib/pollution'
 config = AccountConfig.new()
 connection = Pollution::Provider.new(config)
 s = connection.get_servers()
-s.table([:id, :flavor_id, :public_ip_address, :private_ip_address, :image_id ])
+s.list_servers()
 
 #ec2fd = Fog::Compute.new({
 #    :provider => 'AWS',
