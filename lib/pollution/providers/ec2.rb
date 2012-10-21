@@ -15,7 +15,7 @@ module Pollution
              @type = config.type
 
              @pconnector = Fog::Compute.new({
-                                  :provider => @type,
+                                  :provider => :aws,
                                   :aws_access_key_id => @access_key,
                                   :aws_secret_access_key => @access_secret,
              })
