@@ -5,8 +5,8 @@ module Pollution
        module Libvirt
 
 class Images
-    def initialize()
-
+    def initialize(libpath="/tmp/test.yaml")
+        @libpath = libpath
         @images = get_registred_images
     end
 
