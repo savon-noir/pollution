@@ -2,9 +2,10 @@
 
 require '../lib/pollution'
 
-Pollution::Config.instance.load("./config.yaml")
-platform = Pollution::Config.instance.get("provider")
+# create config as singleton
+Pollution::Config.instance.load("./config.yaml.ro")
+provider = Pollution::Config.instance.get("provider")
 
-
-connection = Pollution::Provider.new(platform)
+# initiate driver and connection
+connection = Pollution::Driver.new(provider)
 connection.list_servers()

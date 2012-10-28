@@ -1,7 +1,5 @@
 require File.join(File.dirname(__FILE__), 'pollution', 'config')
-require File.join(File.dirname(__FILE__), 'pollution', 'providers', 'providers')
-require File.join(File.dirname(__FILE__), 'pollution', 'resources', 'generic', 'machine')
-require File.join(File.dirname(__FILE__), 'pollution', 'resources', 'ec2', 'machine')
+require File.join(File.dirname(__FILE__), 'pollution', 'driver')
 
 module Pollution
   unless const_defined?(:VERSION)

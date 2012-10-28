@@ -2,12 +2,14 @@
 #
 require 'fog'
 require 'rubygems'
+require File.join(File.dirname(__FILE__), 'images')
 
 module Pollution
-    module Provider
+    module Driver
 
-    class EC2
+    class AWS
         attr_reader :type
+        attr_reader :images
        
         def initialize(config)
              @access_key = config['access_key']
@@ -19,6 +21,8 @@ module Pollution
                                   :aws_access_key_id => @access_key,
                                   :aws_secret_access_key => @access_secret,
              })
+
+             @images = Pollution::Resources::AWS::Images.new(config)
         end
 
         def get_servers()

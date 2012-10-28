@@ -24,12 +24,3 @@ class Config
 end
 
 end
-
-#{
-#	"type"=>"AWS", "access_key"=>"AKIAINQ2AU56H45EVFFA", "access_secret"=>"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", "region"=>"us-east-1", 
-#	"images"=>
-#		{
-#		"centos-01"=> {"name"=>"webserver", "distribution"=>"centos", "architecture"=>"64"}, 
-#		"centos-02"=> {"name"=>"webserver2", "distribution"=>"centos", "architecture"=>"64"}
-#                }
-#}

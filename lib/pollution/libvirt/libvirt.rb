@@ -4,13 +4,13 @@ require 'fog'
 require 'rubygems'
 
 module Pollution
-    module Provider
+    module Driver
 
     class Libvirt
         attr_reader :type
 
         def initialize(config)
-             @type = config.type
+             @type = config['type']
 
              @pconnector = Fog::Compute.new({
                                   :provider => :libvirt,
