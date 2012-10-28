@@ -1,33 +1,10 @@
 #!/usr/bin/env ruby
 
-require './AccountConfig'
 require '../lib/pollution'
 
-#Fog.mock!
-#
-config = AccountConfig.new()
-connection = Pollution::Provider.new(config)
+Pollution::Config.instance.load("./config.yaml")
+platform = Pollution::Config.instance.get("provider")
+
+
+connection = Pollution::Provider.new(platform)
 connection.list_servers()
-
-#ec2fd = Fog::Compute.new({
-#    :provider => 'AWS',
-#    :aws_access_key_id => c.access_key_id,
-#    :aws_secret_access_key => c.access_key_secret,
-#})
-#
-#serverlist = ec2fd.servers
-#vpclist = ec2fd.vpcs
-#
-#puts vpclist.inspect
-##num_instances = instance_list.length
-##puts "We have " + num_instances.to_s()  + " servers"
-##  ##
-##  ## # Print out a table of instances with choice columns
-#vpclist.table([:id, :cidr_block, :state]) 
-#serverlist.table([:id, :flavor_id, :public_ip_address, :private_ip_address, :image_id ])
-#
-#a = ec2fd.describe_images({'image-type' => 'machine', 'architecture' => 'x86_64', 'Owner' => 'amazon'})
-#a = ec2fd.describe_images('Filter.image-type' => 'machine', 'Filter.architecture' => 'x86_64', 'Owner' => 'self')
-#a = ec2fd.describe_images()
-
-#puts a.inspect

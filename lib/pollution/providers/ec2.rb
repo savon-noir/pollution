@@ -10,9 +10,9 @@ module Pollution
         attr_reader :type
        
         def initialize(config)
-             @access_key = config.access_key
-             @access_secret = config.access_secret
-             @type = config.type
+             @access_key = config['access_key']
+             @access_secret = config['access_secret']
+	     @type = config['type']
 
              @pconnector = Fog::Compute.new({
                                   :provider => :aws,

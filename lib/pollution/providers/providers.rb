@@ -3,7 +3,7 @@
 module Pollution
     module Provider
         def self.new(config)
-             @type = config.type
+             @type = config['type']
              case @type
              when "AWS"
                  require File.join(File.dirname(__FILE__), 'ec2')

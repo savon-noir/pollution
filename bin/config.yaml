@@ -1,0 +1,15 @@
+provider:
+    type: AWS
+    access_key: <put your aws access key here>
+    access_secret: <put your aws access key secret here>
+    region: us-east-1
+
+    images:
+        centos-01:
+             name: webserver
+             distribution: centos
+             architecture: 64
+        centos-02:
+             name: webserver2
+             distribution: centos
+             architecture: 64
